@@ -1,0 +1,363 @@
+@mixin position($pos, $top, $left, $bottom, $right, $zindex){
+    position: $pos;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    z-index: $zindex;
+}
+
+@mixin basicsWrap($display, $width, $height, $padding, $margin) {
+    display: $display;
+    width: $width;
+    height: $height;
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin textWrap($size, $weight, $color, $center) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-align: $center;
+}
+
+@mixin border_or_background($border, $val) {
+    border: $border;
+    background: $val;
+}
+
+html,
+body {
+    @include basicsWrap(null, 100%, 100%, null, null);
+}
+
+.delete-item {
+    padding: 0;
+}
+
+.wrap {
+    @include basicsWrap(null, 100%, 100%, null, null);
+    background: #fff;
+
+    .header {
+        @include basicsWrap(null, 100%, 15%, null, null);
+
+        .brandPromotion {
+            @include basicsWrap(block, 100%, 70px, null, null);
+            background: #000;
+
+            div {
+                @include basicsWrap(block, null, 100%, null, null);
+                
+            }
+            .brand-item-1 {
+                background: url('/shopping/resource/img/banner/capacci.jpg') no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+            }
+            .brand-item-2 {
+                background: url('/shopping/resource/img/banner/chanel.jpg') no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+            }
+            .brand-item-3 {
+                background: url('/shopping/resource/img/banner/KameManNen.jpg') no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+            }
+        }
+
+        .bx-wrapper {
+                    
+            .bx-controls-direction {
+                display: none;
+            }
+        }
+    }
+
+    .container {
+        @include basicsWrap(null, 100%, 75%, null, null);
+        
+        .content {
+            @include basicsWrap(null, 100%, 100%, null, null);
+            
+            .searchWrap {
+                height: 100%;
+
+                .tag-wrap {
+                    display: block;    
+                         
+                    &.active {
+                        display: none;
+                    }
+                    .tab-menu {
+                        @include basicsWrap(flex, 100%, null, 0 15px, null);
+
+                        li {
+                            width: 100%;
+
+                            a { 
+                                @include basicsWrap(block, 100%, null, 8px, null);
+                                @include border_or_background(1px solid #ccc, #fff5f5);
+                                text-align: center;
+                                
+                                &.active {
+                                    @include textWrap(null, bold, blue, null);
+                                    background:#fff;
+                                }                    
+                            }
+                        }
+                    }
+
+                    .consonant-wrap {
+                        padding: 5% 0;
+
+                        ul {
+                            @include basicsWrap(none, 100%, null, null, null);
+                            flex-wrap: wrap;
+                            text-align: center;
+
+                            &.active {
+                                display: flex;
+                            }
+                            li {
+                                padding: 5px 13px;
+
+                                a {
+                                    @include basicsWrap(block, 32px, 32px, null, null);
+                                    line-height: 32px;
+                                    text-align: center;
+                                    border-radius: 50%;
+                                    background: #ccc;
+
+                                    &.color {
+                                        color: #fff;
+                                        background: rgb(131, 131, 131);
+                                    }
+
+                                    &.active {
+                                        background: blue;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .checkItemWrap {
+                        ul {
+                            @include basicsWrap(none, 100%, null, 0 10px, null);
+                            border-top: 1px solid #ccc;
+
+                            &.active {
+                                display: block;
+                            }
+
+                            li {
+                                border-bottom: 1px solid #ccc;
+                                padding: 14px 0;
+                                text-align: left;
+
+                                label {
+                                    @include basicsWrap(inline-block, 49%, null, null, null);
+                                }
+                            }
+                        }
+                    }
+                }
+               
+            }
+            
+            .resultBox {
+                @include basicsWrap(block, 100%, 0, null, null);
+                transition: .4s height ease 1s;
+                opacity: 0;
+                z-index: -999;
+
+                &.active {
+                    height: 100%;
+                    opacity: 1;
+                    z-index: 0;
+
+                    .productWrap {
+                        display: block
+                    }
+                }
+
+                .productWrap {
+                    @include basicsWrap(none, 100%, 100%, null, null);
+                    
+                    ul {
+                        @include basicsWrap(block, 100%, 100%, 5px, null);
+                        text-align: center;
+                        overflow: scroll;
+                        transition: .4s;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                        li {
+                            @include basicsWrap(inline-block, 0, null, null, 5px);
+                            @include position(relatiave, 30px, null, null, null, null);
+                            vertical-align: top;
+                            transition: .6s ease .8s;
+                            opacity: 0;
+                            &.active {
+                                width: 46%;
+                                opacity: 1;
+                                top: 0;
+                            }
+                            
+                            a {
+                                @include basicsWrap(block, 100%, null, null, null);
+
+                                div {
+
+                                    &:nth-child(1) {
+                                        width: 184px;
+                                        height: 246px;
+                                        img {
+                                            @include basicsWrap(block, 100%, 100%, null, null);
+                                        }
+                                    }
+                                }
+                                
+                                
+                                .textWrap{
+                                    @include basicsWrap(null, null, 110px, 0 0 10px 0, 20px 0);
+                                    border-bottom: 1px solid #ccc;
+                                    text-align: left;
+
+                                    span {
+                                        display: block;
+
+                                        p {
+                                            display: inline-block;
+
+                                            &:nth-child(1) {
+                                                margin-right: 5px;
+                                            }
+                                        }
+                                        .percent {
+                                            @include textWrap(18px, bold, #e3252b, null);
+                                        }
+                                        .salePrices {
+                                            @include textWrap(18px, bold, null, null);
+                                        }
+                                    } 
+                                    > p {
+                                        font-size: 14px;
+                                        &:nth-child(2) {
+                                            margin: 8px 0;
+                                            color: #aaaaaa
+                                        }
+                                    }
+                                }  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        @include basicsWrap(null, 100%, 10%, null, null);
+
+        .tagCatch-box {
+            @include basicsWrap(none, 100%, 45px, 0 10px, null);
+            @include position(fixed, null, null, 61px, null, 20);
+            line-height: 45px;
+            transition: .4s;
+            background: #fff;
+            &.up {
+                bottom: 85%;
+                padding: 0 0 0 0;
+                
+                .tagBackBtn {
+                    display: block;
+                    opacity: 1;
+                    z-index: 10;
+                }
+            }
+
+            &.active {
+                display: flex;
+            }
+
+            .tagBackBtn {
+                @include basicsWrap(none, 45px, 45px, null, null);
+                background: url(/resource/img/button/backward.PNG) no-repeat;
+                background-position: center;
+                transition: opacity 1s;
+                opacity: 0;
+                z-index: -999;
+            }
+
+            ul {
+                overflow: auto;
+                white-space:nowrap;
+                width: 100%;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                li {
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    @include basicsWrap(inline-block, null, 30px, 0 10px, 0 5px 0 0);
+                    line-height: 30px;
+                    background: blue;
+                    transition: .2s;
+                    opacity: 0;
+
+                    a {
+                        display: flex;
+                        color: #fff;
+                        p {
+                            &:nth-child(2) {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tagResetBtn {
+                @include basicsWrap(null, 45px, 100%, null, 0 0 0 auto);
+                @include position(absolute, null, null, null, 0, -999);
+                background: #fff url(/resource/img/button/reset.png) no-repeat;
+                background-size: 25px 25px;
+                background-position: center;
+                opacity: 0;
+
+                &.active {
+                    z-index: 10;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .choiceBox {
+            @include basicsWrap(null, 100%, 56px, null, null);
+            @include position(absolute, null, null, 0, null, null);
+            line-height: 45px;
+            text-align: center;
+            background: #b0b0b0;
+            pointer-events: none;
+            transition: .4s;
+
+            &.active {
+                background: blue;
+                pointer-events: auto;
+            }
+            button {
+                @include basicsWrap(inline-block, 100%, 100%, null, 0 auto);
+                @include textWrap(1em, null, #fff, null);
+            }
+        }
+    }
+}

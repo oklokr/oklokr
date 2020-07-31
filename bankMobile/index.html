@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>BANK REMITTANCE</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<script src="/bankMobile/resource/js/jQuery.1.12.4.min.js"></script>
+<script src="/bankMobile/resource/js/library/jquery.counterup.min.js"></script>
+<script src="/bankMobile/resource/js/library/waypoints.min.js"></script>
+<script src="/bankMobile/resource/js/common.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/bankMobile/resource/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/bankMobile/resource/css/common.css" />
+
+</head>
+
+<body>
+
+    <div class="wrap">      
+        
+        <div class="container">
+
+            <!-- 송금 -->
+            <div class="content1">
+                <div class="layerPopup">
+                    
+                    <div class="layerCont">
+                        <p class="priceWrap active"><span class="countVal"></span><em>원</em>을 송금 하시겠습니까?</p>
+                        <p class="completion">송금이 완료되었습니다.</p>
+                    </div>
+                    <div class="layerFoot">
+                        <a href="#" class="cancell">취소</a>
+                        <a href="#" class="send">보내기</a>
+                    </div>
+                </div>
+
+                <div class="top-area">
+                    <h2>금액을 입력하세요</h2>
+                </div>
+                <div class="amount">
+                    <div class="textWrap">
+                        <div class="numberInput"><span class="number active">0</span></div>
+                        <span>원</span>
+                        <span class="amountText"></span>
+                        <input type="hidden" id="price" maxlength="7" value="">
+                        <a href="#" class="changeBtn">3,000,000원으로 변경</a>
+                    </div>
+                </div>
+                <div class="numberPad">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th><button class="key-pad" data-num="1"></button></th>
+                                <th><button class="key-pad" data-num="2"></button></th>
+                                <th><button class="key-pad" data-num="3"></button></th>
+                            </tr>
+                            <tr>
+                                <th><button class="key-pad" data-num="4"></button></th>
+                                <th><button class="key-pad" data-num="5"></button></th>
+                                <th><button class="key-pad" data-num="6"></button></th>
+                            </tr>
+                            <tr>
+                                <th><button class="key-pad" data-num="7"></button></th>
+                                <th><button class="key-pad" data-num="8"></button></th>
+                                <th><button class="key-pad" data-num="9"></button></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th><button class="key-pad zero" data-num="0"></button></th>
+                                <th><button class="backClear">←</button></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom">
+                    <button class="resetBtn">취소</button>
+                    <button class="remittanceBtn">송금</button>
+                </div>
+    
+            </div>
+
+            <!-- 상품검색 -->
+            <div class="content2">
+                <div class="loding"></div>
+
+                <div class="top-area">
+                    <h2 class="my-name">이승주</h2>
+                    <button class="my-account-list">내 계좌</button>
+                </div>
+
+                <div class="mid-area">
+                    <a class="advertising-wrap">
+                        <span class="title-wrap">
+                            <p class="top-title">체크카드로 결제하면</p>
+                            <p class="bottom-title">네스트 호텔 10% 즉시 할인</p>
+                        </span>
+                        <span class="maker">nest hotel</span>
+                    </a>
+
+                    <div class="passbook">
+                        <a href="#">
+                            <div class="title-wrap">
+                                <span class="passbook-name"><h2 class="my-name">이승주</h2>의 통장 ★</span>
+                                <p class="account-number">1234-12-1234567</p>
+                                <button class="set-color-btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <div class="current-amount-wrpa">
+                                <p class="priceWrap"><span class="priceVal"></span><em>2,111,555</em>원</p>
+                            </div>
+                            <div class="processing-button-wrap">
+                                <button class="amount-transfer-btn">이체</button>
+                                <button class="card-application-btn">카드신청</button>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="passbook type-1">
+                        <a href="#">
+                            <div class="title-wrap">
+                                <span class="passbook-name"><h2 class="my-name">용돈용</h2>의 통장 ★</span>
+                                <p class="account-number">1234-12-1234567</p>
+                                <button class="set-color-btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <div class="current-amount-wrpa">
+                                <p class="priceWrap"><span class="priceVal"></span><em>2,111,555</em>원</p>
+                            </div>
+                            <div class="processing-button-wrap">
+                                <button class="amount-transfer-btn">이체</button>
+                                <button class="card-application-btn">카드신청</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="passbook type-1">
+                        <a href="#">
+                            <div class="title-wrap">
+                                <span class="passbook-name"><h2 class="my-name">생활비</h2>의 통장 ★</span>
+                                <p class="account-number">1234-12-1234567</p>
+                                <button class="set-color-btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <div class="current-amount-wrpa">
+                                <p class="priceWrap"><span class="priceVal"></span><em>2,111,555</em>원</p>
+                            </div>
+                            <div class="processing-button-wrap">
+                                <button class="amount-transfer-btn">이체</button>
+                                <button class="card-application-btn">카드신청</button>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <button class="increase-passbook-btn">+</button>
+                    <button class="screen-editing-btn">화면편집</button>
+                </div>
+                
+                <div class="set-color-box">
+                    <div class="set-color-wrap">
+                        <div class="top-area">
+                            <button class="change-btn">확인</button>
+                            <span class="top-title">
+                                <p><em class="my-name">이승주</em>의 통장</p>
+                            </span>
+                            <span class="bottom-title">
+                                <p><em>입출금</em>1234-12-1234567</p>
+                            </span>
+                        </div>
+                        <div class="color-select-wrap">
+                            <ul>
+                                <li><button class="color-type01" data-name="color-type-1"></button></li>
+                                <li><button class="color-type02" data-name="color-type-2"></button></li>
+                                <li><button class="color-type03" data-name="color-type-3"></button></li>
+                                <li><button class="color-type04" data-name="color-type-4"></button></li>
+                                <li><button class="color-type05" data-name="color-type-5"></button></li>
+                                <li><button class="color-type06" data-name="color-type-6"></button></li>
+                                <li><button class="color-type07" data-name="color-type-7"></button></li>
+                                <li><button class="color-type08" data-name="color-type-8"></button></li>
+                                <li><button class="color-type09" data-name="color-type-9"></button></li>
+                                <li><button class="color-type10" data-name="color-type-10"></button></li>
+                                <li><button class="color-type11" data-name="color-type-11"></button></li>
+                                <li><button class="color-type12" data-name="color-type-12"></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            <div class="content3">
+
+                <div class="loding"></div>
+
+                <div class="top-area">
+                    <h2>나의 신용 정보</h2>
+                </div>
+
+                <div class="credit-rating">
+                    <div class="gauge-wrap">
+                        <div class="gauge">
+                            <div class="gauge-arrow-wrap">
+                                <span class="gauge-arrow">
+                                    <span></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rating-number"><p class="rating-value" dtaa-name="rating"></p>등급</div>
+
+                    <div class="rating-list">
+                        <ul>
+                            <li>
+                                <span class="list-item01">
+                                    <p class="title">백분위</p>
+                                    <p class="item-val">상위 <sapn class="num percent"></sapn>%</p>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <p class="title">신용점수</p>
+
+                                    <!-- em 점수 기준 %와 등급 분류 -->
+                                    <p class="item-val" ><span class="num score">620</span> / 1000 점</p>
+                                    <script>
+                                        // 나이스 지키미 신용점수 경우 nice, 올크레딧 신용점수 경우 all 로 표기
+                                        CreditLevel('.score', 'nice');
+                                    </script>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <p class="title">조회 변동</p>
+                                    <p class="item-val"><em>0</em>건</p>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="credit-information-list">
+                        <ul>
+                            <li>
+                                <span>
+                                    <p class="title">신용점수 올리기</p>
+                                    <button>보기</button>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <p class="title">맞춤 산용관리 팁</p>
+                                    <button>보기</button>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+               
+            </div>
+            
+        </div>
+
+        <div class="footer">
+
+            <div class="footerWrap">
+                <button class="btn_menu" type="button"></button>
+                
+                <ul>
+                    <li><button class="remittance-btn">송금</button></li>
+                    <li><button class="home-btn">홈</button></li>
+                    <li><button class="creditRating-btn">신용등급</button></li>
+                </ul>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+

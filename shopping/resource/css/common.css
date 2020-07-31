@@ -1,0 +1,412 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.delete-item {
+  padding: 0;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.wrap .header {
+  width: 100%;
+  height: 15%;
+}
+
+.wrap .header .brandPromotion {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background: #000;
+}
+
+.wrap .header .brandPromotion div {
+  display: block;
+  height: 100%;
+}
+
+.wrap .header .brandPromotion .brand-item-1 {
+  background: url("/shopping/resource/img/banner/capacci.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.wrap .header .brandPromotion .brand-item-2 {
+  background: url("/shopping/resource/img/banner/chanel.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.wrap .header .brandPromotion .brand-item-3 {
+  background: url("/shopping/resource/img/banner/KameManNen.jpg") no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.wrap .header .bx-wrapper .bx-controls-direction {
+  display: none;
+}
+
+.wrap .container {
+  width: 100%;
+  height: 75%;
+}
+
+.wrap .container .content {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap .container .content .searchWrap {
+  height: 100%;
+}
+
+.wrap .container .content .searchWrap .tag-wrap {
+  display: block;
+}
+
+.wrap .container .content .searchWrap .tag-wrap.active {
+  display: none;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .tab-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .tab-menu li {
+  width: 100%;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .tab-menu li a {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: #fff5f5;
+  text-align: center;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .tab-menu li a.active {
+  font-weight: bold;
+  color: blue;
+  background: #fff;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap {
+  padding: 5% 0;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul {
+  display: none;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul li {
+  padding: 5px 13px;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul li a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul li a.color {
+  color: #fff;
+  background: #838383;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .consonant-wrap ul li a.active {
+  background: blue;
+  color: #fff;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .checkItemWrap ul {
+  display: none;
+  width: 100%;
+  padding: 0 10px;
+  border-top: 1px solid #ccc;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .checkItemWrap ul.active {
+  display: block;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .checkItemWrap ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 14px 0;
+  text-align: left;
+}
+
+.wrap .container .content .searchWrap .tag-wrap .checkItemWrap ul li label {
+  display: inline-block;
+  width: 49%;
+}
+
+.wrap .container .content .resultBox {
+  display: block;
+  width: 100%;
+  height: 0;
+  -webkit-transition: .4s height ease 1s;
+  transition: .4s height ease 1s;
+  opacity: 0;
+  z-index: -999;
+}
+
+.wrap .container .content .resultBox.active {
+  height: 100%;
+  opacity: 1;
+  z-index: 0;
+}
+
+.wrap .container .content .resultBox.active .productWrap {
+  display: block;
+}
+
+.wrap .container .content .resultBox .productWrap {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap .container .content .resultBox .productWrap ul {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  text-align: center;
+  overflow: scroll;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.wrap .container .content .resultBox .productWrap ul::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap .container .content .resultBox .productWrap ul li {
+  display: inline-block;
+  width: 0;
+  margin: 5px;
+  position: relatiave;
+  top: 30px;
+  vertical-align: top;
+  -webkit-transition: .6s ease .8s;
+  transition: .6s ease .8s;
+  opacity: 0;
+}
+
+.wrap .container .content .resultBox .productWrap ul li.active {
+  width: 46%;
+  opacity: 1;
+  top: 0;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a {
+  display: block;
+  width: 100%;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a div:nth-child(1) {
+  width: 184px;
+  height: 246px;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a div:nth-child(1) img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap {
+  height: 110px;
+  padding: 0 0 10px 0;
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap span {
+  display: block;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap span p {
+  display: inline-block;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap span p:nth-child(1) {
+  margin-right: 5px;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap span .percent {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e3252b;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap span .salePrices {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap > p {
+  font-size: 14px;
+}
+
+.wrap .container .content .resultBox .productWrap ul li a .textWrap > p:nth-child(2) {
+  margin: 8px 0;
+  color: #aaaaaa;
+}
+
+.wrap .footer {
+  width: 100%;
+  height: 10%;
+}
+
+.wrap .footer .tagCatch-box {
+  display: none;
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  position: fixed;
+  bottom: 61px;
+  z-index: 20;
+  line-height: 45px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background: #fff;
+}
+
+.wrap .footer .tagCatch-box.up {
+  bottom: 85%;
+  padding: 0 0 0 0;
+}
+
+.wrap .footer .tagCatch-box.up .tagBackBtn {
+  display: block;
+  opacity: 1;
+  z-index: 10;
+}
+
+.wrap .footer .tagCatch-box.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .footer .tagCatch-box .tagBackBtn {
+  display: none;
+  width: 45px;
+  height: 45px;
+  background: url(/resource/img/button/backward.PNG) no-repeat;
+  background-position: center;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 0;
+  z-index: -999;
+}
+
+.wrap .footer .tagCatch-box ul {
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.wrap .footer .tagCatch-box ul::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap .footer .tagCatch-box ul li {
+  display: inline-block;
+  height: 30px;
+  padding: 0 10px;
+  margin: 0 5px 0 0;
+  line-height: 30px;
+  background: blue;
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+}
+
+.wrap .footer .tagCatch-box ul li.active {
+  opacity: 1;
+}
+
+.wrap .footer .tagCatch-box ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+
+.wrap .footer .tagCatch-box ul li a p:nth-child(2) {
+  margin-left: 5px;
+}
+
+.wrap .footer .tagCatch-box .tagResetBtn {
+  width: 45px;
+  height: 100%;
+  margin: 0 0 0 auto;
+  position: absolute;
+  right: 0;
+  z-index: -999;
+  background: #fff url(/resource/img/button/reset.png) no-repeat;
+  background-size: 25px 25px;
+  background-position: center;
+  opacity: 0;
+}
+
+.wrap .footer .tagCatch-box .tagResetBtn.active {
+  z-index: 10;
+  opacity: 1;
+}
+
+.wrap .footer .choiceBox {
+  width: 100%;
+  height: 56px;
+  position: absolute;
+  bottom: 0;
+  line-height: 45px;
+  text-align: center;
+  background: #b0b0b0;
+  pointer-events: none;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.wrap .footer .choiceBox.active {
+  background: blue;
+  pointer-events: auto;
+}
+
+.wrap .footer .choiceBox button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 1em;
+  color: #fff;
+}

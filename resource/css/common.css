@@ -1,0 +1,330 @@
+html,
+body,
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+section .section-title {
+  font-family: "Releway";
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 60px 0 80px 0;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  font-family: "Raleway";
+  position: absolute;
+  top: 100%;
+  background: #020d1c;
+}
+
+header .gnb-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1019px) {
+  header .gnb-wrap {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 674px) {
+  header .gnb-wrap .menu-btn {
+    display: block !important;
+    left: 0 !important;
+  }
+  header .gnb-wrap .gnb {
+    display: none;
+    left: 100%;
+  }
+}
+
+header .gnb-wrap h1 {
+  width: 30px;
+  height: 30px;
+}
+
+header .gnb-wrap h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -99999px;
+  background: url(/resource/img/logo/logo.png) no-repeat;
+  background-size: 30px 30px;
+}
+
+header .gnb-wrap .gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 63.6%;
+  position: relative;
+}
+
+header .gnb-wrap .gnb li a {
+  color: #fff;
+}
+
+header .gnb-wrap .menu-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 50px;
+}
+
+header .gnb-wrap .menu-btn span {
+  display: block;
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  left: 10px;
+  border-bottom: 3px solid #fff;
+}
+
+header .gnb-wrap .menu-btn span.line-1 {
+  top: 18px;
+}
+
+header .gnb-wrap .menu-btn span.line-3 {
+  bottom: 15px;
+}
+
+header .gnb-wrap .mobile-gnb-menu {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #2b2b43;
+}
+
+header .gnb-wrap .mobile-gnb-menu li {
+  padding: 12px 20px;
+}
+
+header .gnb-wrap .mobile-gnb-menu li:first-child {
+  padding-top: 25px;
+}
+
+header .gnb-wrap .mobile-gnb-menu li:last-child {
+  padding-bottom: 25px;
+}
+
+header .gnb-wrap .mobile-gnb-menu li a {
+  font-size: 17px;
+  color: #fff;
+}
+
+main .home-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: linear-gradient(-45deg, #1c3a64, #000);
+}
+
+main .home-area div {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+main .home-area div img {
+  margin-bottom: 51px;
+}
+
+main .home-area div .name-developer-text {
+  font-size: 50px;
+  font-family: Raleway;
+  font-weight: 300;
+  letter-spacing: -2.5px;
+  margin-bottom: 18px;
+}
+
+main .home-area div .name-developer-text mark {
+  font-family: Raleway;
+}
+
+main .home-area div .name-developer-text mark:first-child {
+  font-weight: 500;
+  color: #00cbf7;
+}
+
+main .home-area div .name-developer-text mark:last-child {
+  font-weight: 100;
+  color: #fff;
+}
+
+main .home-area div .brief-introduction-text {
+  line-height: 28px;
+  font-size: 17px;
+  font-weight: 100;
+}
+
+main .home-area div .brief-introduction-text em {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+main .home-area .view-introduce {
+  display: inline-block;
+  font-family: "Raleway";
+  font-size: 16px;
+  color: #fff;
+  padding: 16.5px 26.5px;
+  margin-top: 30px;
+  border: 1px solid #fff;
+}
+
+main .home-area .next-btn-wrap {
+  position: absolute;
+  bottom: 20px;
+}
+
+main .home-area .next-btn-wrap .next-btn {
+  display: inline-block;
+  width: 39px;
+  height: 24px;
+  text-indent: -9999px;
+  background: url(/resource/img/button/next-btn.png) no-repeat;
+}
+
+main .about-area {
+  padding: 50px 20px;
+}
+
+main .about-area .introduction-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap {
+  padding-left: 40px;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap .Information-title {
+  font-family: "Raleway";
+  font-size: 40px;
+  margin: 10px 0 20px;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap .Information-text {
+  line-height: 23px;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap .Information-text mark {
+  font-size: 26px;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap .Information-text em {
+  color: #01b5ca;
+}
+
+main .about-area .introduction-wrap .Information-text-wrap .my-Information-wrap {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: .7px;
+}
+
+main .about-area .skill-gauge-wrap {
+  margin-top: 5%;
+}
+
+main .about-area .skill-gauge-wrap .skill-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  margin-bottom: 7px;
+  border-radius: 0 5px 5px 0;
+  background: #e2eaee;
+}
+
+main .about-area .skill-gauge-wrap .skill-wrap .skill-name {
+  width: 110px;
+  font-size: 14px;
+  padding: 6px 0 6px 10px;
+  border-radius: 5px 0 0 5px;
+  background: -webkit-gradient(linear, left top, right top, from(#006b9c), to(#00a0e9));
+  background: linear-gradient(to right, #006b9c, #00a0e9);
+}
+
+main .portfolio-area {
+  padding-bottom: 50px;
+  background: #f5f5f5;
+}
+
+main .portfolio-area .portfolio-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box {
+  width: 100%;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-title {
+  display: inline-block;
+  font-family: "Raleway";
+  font-size: 17px;
+  font-weight: 500;
+  padding: 6px;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #000;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-title b {
+  font-weight: 100;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-item {
+  width: 269px;
+  height: 478px;
+  margin: 0 auto;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-item .title-wrap {
+  position: relative;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-item .title-wrap .portfolio-top-text {
+  font-size: 22px;
+}
+
+main .portfolio-area .portfolio-wrap .portfolio-box .portfolio-item .title-wrap .portfolio-bottom-text {
+  font-size: 15px;
+  color: #1fcbe5;
+}

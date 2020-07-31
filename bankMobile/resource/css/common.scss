@@ -1,0 +1,971 @@
+@mixin position($pos, $top, $left, $bottom, $right, $zindex){
+    position: $pos;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    z-index: $zindex;
+}
+
+@mixin contentStyle($pos, $left, $right, $index) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: $pos;
+    top: 0;
+    left: $left;
+    right: $right;
+    transition: all 0.3s ease;
+    z-index: $index;
+    color: #fff;
+    background: rgb(27,27,27);
+    background: linear-gradient(152deg, rgba(27,27,27,1) 0%, rgba(0,24,45,1) 100%);
+}
+
+@mixin basicsWrap($display, $width, $height, $padding, $margin) {
+    display: $display;
+    width: $width;
+    height: $height;
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin textWrap($size, $weight, $color, $center) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-align: $center;
+}
+
+@mixin border_or_background($border, $radius, $type, $size, $pos) {
+    border: $border;
+    border-radius: $radius;
+    background: $type;
+    background-size: $size;
+    background-position: $pos;
+}
+
+@mixin opacity_transition_transform($opacity, $transition, $trnasform){
+    opacity: $opacity;
+    transition: $transition;
+    transform: $trnasform;
+}
+
+@mixin flex($justifyContent, $item, $flexWrap) {
+    display: flex;
+    align-items: $item;
+    justify-content: $justifyContent;
+    flex-wrap: $flexWrap;
+}
+
+@mixin footer_btn_after_style() {
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 14px;
+    left: 52px;
+}
+
+@keyframes number {
+    form {
+        top: 20px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes loding {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}
+
+@keyframes animation_big_or_Small {
+    0% { height: 35px }
+    50% { height: 28px }
+    100% { height: 42px }
+}
+
+@keyframes animation_shake_bell {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(45deg); }
+    100% { transform: rotate(-45deg); }
+}
+
+html,
+body {
+    @include basicsWrap(null, 100%, 100%, null, null);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrap {
+    @include basicsWrap(null, 100%, 100%, null, null);
+    .container {
+        height: 92%;
+        
+        // 로딩 Style
+        .loding {
+            @include basicsWrap(none, 50px, 50px, null, 5% auto);
+            @include position(absolute, 45%, 45%, null, null, null);
+            border: 3px solid #fff;
+                border: {
+                right-color: rgb(95, 97, 236);
+                top-color: rgb(95, 97, 236);
+                radius: 100%;
+            }
+            animation: loding 800ms infinite linear;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        // CONTENT1 - 송금 Page Style
+        .content1 {
+            @include contentStyle(fixed, null, 100%, 99999);
+            color:#eaeaea;
+
+            &.active {
+                right: 0;
+            }
+            
+            // 좌측 상단 Style
+            .top-area {
+                @include basicsWrap(flex, 100%, 8%, null, null);
+                align-items: center;
+                
+                h2 {
+                    font-size: 1.2em;
+                    margin-left: 20px;
+                }
+            }
+
+            // Mid Price Count - 금액표기 Stlye
+            .amount {
+                @include flex(center, center, null);
+                @include basicsWrap(null, 100%, 48%, null, null);
+                
+                .textWrap {
+                    @include flex(center, null, wrap);
+                    @include textWrap(2.5em, null, null, center);
+                    width: 100%;
+
+                    .numberInput {
+                        .number {
+                            @include opacity_transition_transform(0, all 0.1s ease-in-out, null);
+                            position: relative;
+                            font-size:0.6em;
+        
+                            &.active {
+                                opacity: 1;
+                                font-size:1em;
+                            }
+
+                            &:nth-last-child(4),
+                            &:nth-last-child(7) {
+                                &::after {
+                                    content: ',';
+                                }
+                            }
+
+                        }
+                    }
+                    .amountText {
+                        @include basicsWrap(null, 100%, 14px, null, 20px 0 10px 0);
+                        @include textWrap(14px, null, #eaeaea, null);
+                        align-self: auto;
+                        transition: all .3s ease-in;
+                    }
+                    .changeBtn {
+                        @include position(relative, 10px, null, null, null, null);
+                        @include border_or_background(null, 5px, #ccccc4, null, null);
+                        @include opacity_transition_transform(0, all .2s ease-in, null);
+                        font-size: 14px;
+                        padding: 7px;
+                    }
+                    &.active {
+                        .amountText {
+                            color: red;
+                        }
+                        .changeBtn {
+                            top:34px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            // Footer pad - 숫자패드 Style
+            .numberPad {
+                @include basicsWrap(block, null, 34%, null, null);
+
+                table {
+                    @include basicsWrap(null, 100%, 100%, null, null);
+
+                    tbody {
+                        tr {
+                            th {
+                                width: 137px;
+
+                                button {
+                                    @include basicsWrap(null, 100%, 100%, null, null);
+                                    @include textWrap(1.6em, null, #e8e8e8, null);
+                                    vertical-align: top;
+
+                                    &:hover {
+                                        color:#7d7d7d;
+                                    }
+                                }
+                                
+                                .backClear,
+                                .resetBtn {
+                                    font-size: 18px;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                    
+                                    &.active {
+                                        opacity: 1;
+                                        pointer-events: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Reset, Remittance Btn - 하단 취소, 송금버튼 Style
+            .bottom {
+                @include basicsWrap(flex, null, 7%, 0 20px, null);
+                align-items: center;
+
+                button:nth-child(1) {
+                    margin-right: 10px;
+                }
+                button {
+                    @include basicsWrap(null, 50%, 52px, null, null);
+                    font-size: 0.9em;
+                    border-radius: 15px;
+                    pointer-events: none;
+                }
+                .resetBtn {
+                    background: #fff;
+                    color: #7d7d7d;
+                    &.active {
+                        background: #fff;
+                        color: #000;
+                        pointer-events: auto;
+                    }
+                }
+                .remittanceBtn {
+                    
+                    background: rgb(31, 154, 255);
+                    color: #b0dbff;
+
+                    &.active {
+                        background: rgb(31, 154, 255);
+                        color: #fff;
+                        pointer-events: auto;
+                    }
+                }
+            }
+
+            // layerPopup - 송금 판업창 Style
+            .layerPopup {
+                @include position(fixed, null, 0, -250px, 0, null);
+                height: 250px;
+                background:#fff;
+                transition: all .3s ease .4s;
+                &.active {
+                    bottom: 0;
+                }
+
+                .layerCont {
+                    color: #000;
+                    padding-top: 10%;
+
+                    @mixin layerTitleStye($pos, $top, $opacity, $transition) {
+                        position: $pos;
+                        top: $top;
+                        opacity: $opacity;
+                        transition: $transition;
+                    }
+                    .priceWrap {
+                        @include textWrap(1em, bold, null, center);
+                        @include layerTitleStye(relative, -10px, 0, .4s);
+
+                        &.active {
+                            @include layerTitleStye(null, 0px, 1, null);
+                        }
+
+                        .countVal,
+                        em {
+                            font-size: 1.4em;
+                        }
+                    }
+                    .completion {
+                        @include textWrap(1.4em, bold, null, center);
+                        @include layerTitleStye(relative, 0px, 0, .4s);
+
+                        &.active {
+                            @include layerTitleStye(null, 10px, 1, null);
+                        }
+                    }
+                }
+
+                .layerFoot {
+                    @include basicsWrap(flex, 100%, 50px, null, null);
+                    @include position(absolute, null, null, 0, null, null);
+                    transition: .4s;
+
+                    &.active {
+                        bottom: -50px;
+                    }
+
+                    a {
+                        @include basicsWrap(null, 50%, 100%, null, null);
+                        @include textWrap(null, null, #fff, center);
+                        line-height: 50px;
+                        background: #333;
+
+                        &:first-child {
+                            background:#ff5500;
+                        }
+                    }
+                }
+            }
+        }
+
+        // CONTENT2 (Main) page - My 통장 화면 Style
+        .content2{
+            @include contentStyle(fixed, 0, 0, 99998);
+
+            &.active2 {
+                left: 10%;
+            }
+            &.active3 {
+                right: 10%;
+            }
+
+            // 좌측 상단 Stlye
+            > .top-area {
+                @include basicsWrap(flex, 100%, 8%, 0 25px, null);
+                align-items: center;
+
+                .my-name {
+                    @include textWrap(1.2em, normal, null, null);
+                }
+                
+                .my-account-list {
+                    @include basicsWrap(null, null, null, 5px 10px, 0 0 0 10px);
+                    @include border_or_background(null, 10px, rgb(247, 240, 240), null, null);
+                    font-weight: bold;
+
+                }
+            }
+
+            // Mid Content - 통장 Stlye
+            .mid-area {
+                @include basicsWrap(null, null, 80%, 0 25px, 10px 0 0 0);
+                overflow: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                // 광고창 Style
+                .advertising-wrap {
+                    @include basicsWrap(flex, null, null, 15px 20px, null);
+                    @include border_or_background(null, 10px, rgb(247, 240, 240), null, null);
+
+                    .title-wrap {
+                        .top-title {
+                            font-size: .85em;
+                        }
+                        .bottom-title {
+                            @include textWrap(.934em, bold, null, null);
+                            margin-top: 5px;
+                        }
+                    }
+                    .maker {
+                        margin-left: auto;
+                        color: rgb(121, 121, 121);
+                    }
+                }
+
+                // My Passbook - 내 통장 Stlye
+                .passbook { 
+                    @include basicsWrap(null, null, 230px, 20px, 10px 0 0 0);
+                    @include position(relative, 20px, null, null, null, null);
+                    @include border_or_background(null, 10px, #ffdf00, null, null);
+                    @include opacity_transition_transform(0, .4s ease, null);
+
+                    &.active {
+                        opacity: 1;
+                        top: 0;
+                    }
+
+                    &.color-type-1 {
+                        background: #ffdf00;
+                    }
+                    &.color-type-2 {
+                        background: #ffa3ae;
+                    }
+                    &.color-type-3 {
+                        background: #e15c5d;
+                    }
+                    &.color-type-4 {
+                        background: #a348a7;
+                    }
+                    &.color-type-5 {
+                        background: #74959a;
+                    }
+                    &.color-type-6 {
+                        background: #0f4c82;
+                    }
+                    &.color-type-7 {
+                        background: #5386a1;
+                    }
+                    &.color-type-8 {
+                        background: #4385cf;
+                    }
+                    &.color-type-9 {
+                        background: #dee9ef;
+                    }
+                    &.color-type-10 {
+                        background: #e7e4dd;
+                    }
+                    &.color-type-11 {
+                        background: #edd0c2;
+                    }
+                    &.color-type-12 {
+                        background: #c4bdab;
+                    }
+                    
+                    &.color-type-3,
+                    &.color-type-4,
+                    &.color-type-5,
+                    &.color-type-6,
+                    &.color-type-7,
+                    &.color-type-8 {
+                        a {
+                            color: #fff;
+                        }
+                        .processing-button-wrap {
+                            button {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    a {
+                        display: block;
+                    }                    
+                    .title-wrap {
+                        position: relative;
+                        
+                        .passbook-name {
+                            @include textWrap(1.1em, 700, null, null);
+                            display: flex;
+
+                            .my-name {
+                                margin-right: 5px;
+                            }
+                        }
+                        .account-number {
+                            font-size: .84em;
+                            margin-top: 10px;
+                        }
+                        .set-color-btn {
+                            @include basicsWrap(block, 30px, 30px, null, null);
+                            @include position(absolute, 0, null, null, 0, null);
+                            span {
+                                @include basicsWrap(block, 4px, 4px, null, 0 0 2px auto);
+                                background: #000;
+                            }
+                        }
+                    }
+
+                    .current-amount-wrpa {
+                        height: 130px;
+                        line-height: 130px;
+                        text-align: center;
+                        .priceWrap {
+                            @include textWrap(1.199em, bold, null, null);
+                            em {
+                                font-size: 1.3em;
+                                margin-right: 3px;
+                            }
+                        }
+                    }
+
+                    .processing-button-wrap {
+                        @include flex(null, center, null);
+
+                        button {
+                            width: 50%;
+                            font-size: .9em;
+                        }
+                        .amount-transfer-btn {
+                            border-right: 1px solid #a8a3a3;
+                        }
+                    }
+                    
+                }
+
+                // My Passbook type1 - 내 통장 type1번 Style
+                .type-1 {
+                    height: initial;
+                    
+                    .title-wrap {
+                        @include basicsWrap(inline-flex, 49%, null, null, null);
+                        position: static;
+
+                        .account-number {
+                            display: none;
+                        }
+
+                        .set-color-btn {
+                            top: 25px;
+                            right: 6%;
+                        }
+                    }
+                    .current-amount-wrpa {
+                        @include basicsWrap(inline-flex, 40%, 100%, null, null);
+                        line-height: 40px;
+                        text-align: right;
+
+                        .priceWrap {
+                            width: 100%;
+                            font-size: 1em;
+
+                            em {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+
+                    .processing-button-wrap {
+                        display: none;
+                    }
+                }
+
+                // My Passbook type - 내 통장 type2번 Style
+                .type-2 {
+                    padding: 10px 20px;
+
+                    .title-wrap {
+                        display: flex;
+
+                        .account-number {
+                            margin-left: auto;
+                            font-size: 1em;
+                            font-weight: bold;
+                        }
+
+                        .set-color-btn {
+                            top: 45px;
+                        }
+                    }
+                    
+                    .current-amount-wrpa {
+                        height: 100%;
+                    }
+                }
+
+
+                > button {
+                    position: relative;
+                    top: 20px;
+                    transition: .4s;
+                    opacity: 0;
+
+                    &.active {
+                        opacity: 1;
+                        top:0;
+                    }
+                }
+
+                // + Button - +버튼 Style
+                .increase-passbook-btn {
+                    @include basicsWrap(null, 100%, 50px, null, 10px 0 0 0);
+                    @include textWrap(2em, null, #ccc, null);
+                    @include border_or_background(null, 10px, #f4f4f4, null, null);
+
+                }
+
+                // Screen Editing Btn - 화면편집 Btn Style
+                .screen-editing-btn {
+                    @include basicsWrap(null, 100%, 60px, null, null);
+                    @include textWrap(0.96em, null, #fff, null);
+
+                }
+            }
+
+            // Set Passbook Color PopUp - 통장 컬러변경 창 Style
+            .set-color-box {
+                @include basicsWrap(block, 100%, 100%, null, null);
+                @include position(fixed, 100%, 0, null, null, null);
+                background: rgba(0, 0, 0, 0.4);
+                transition: .4s;
+                opacity: 0;
+
+                &.active {
+                    top: 0;
+                    opacity: 1;
+                    .set-color-wrap {
+                        bottom: 0;
+                    }
+                }
+
+                .set-color-wrap {
+                    @include basicsWrap(null, 100%, 300px, 20px, null);
+                    @include position(absolute, null, 0, -300px, 0, null);
+                    color: #000;
+                    border-radius: 15px 15px 0 0;
+                    background: #fff;
+                    transition: .4s ease .2s;
+
+                    .top-area {
+                        @include basicsWrap(null, 100%, 80px, null, null);
+
+                        .change-btn {
+                            @include basicsWrap(block, null, null, null, 0 0 0 auto);
+                            font-size: .9em;
+                        }
+
+                        .top-title {
+
+                            p {
+                                @include textWrap(1.3em, bold, null, null);
+                            }
+                        }
+
+                        .bottom-title {
+                            @include basicsWrap(flex, null, null, null, 10px 0 0 0);
+                            align-items: center;
+
+                            p {
+                                font-size: .899em;
+                                margin-right: 10px;
+                            }
+                            
+                            button {
+                                @include basicsWrap(null, 75px, 30px, null, null);
+                                @include border_or_background(null, 15px, rgb(247, 240, 240), null, null);
+                            }
+                        }
+                    }
+                    .color-select-wrap {
+                        ul {
+                            @include flex(center, null, wrap);
+
+                            li {
+                                margin: 6px 27px;
+
+                                &:nth-child(1),
+                                &:nth-child(5),
+                                &:nth-child(9) {
+                                    margin-left: 0;
+                                }
+                                &:nth-child(4),
+                                &:nth-child(8),
+                                &:nth-child(12) {
+                                    margin-right: 0;
+                                }
+                                button {
+                                    @include basicsWrap(null, 43px, 43px, null, null);
+                                    border-radius: 50%;
+                                    
+                                    &.color-type01 {
+                                        background: #ffdf00;
+                                    }
+                                    &.color-type02 {
+                                        background: #ffa3ae;
+                                    }
+                                    &.color-type03 {
+                                        background: #df5d5d;
+                                    }
+                                    &.color-type04 {
+                                        background: #a348a7;
+                                    }
+                                    &.color-type05 {
+                                        background: #74959a;
+                                    }
+                                    &.color-type06 {
+                                        background: #0f4c82;
+                                    }
+                                    &.color-type07 {
+                                        background: #5386a1;
+                                    }
+                                    &.color-type08 {
+                                        background: #4385cf;
+                                    }
+                                    &.color-type09 {
+                                        background: #dee9ef;
+                                    }
+                                    &.color-type10 {
+                                        background: #e7e4dd;
+                                    }
+                                    &.color-type11 {
+                                        background: #edd0c2;
+                                    }
+                                    &.color-type12 {
+                                        background: #c4bdab;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // CONTENT3 My Credit Information - 내 신용정보 Page Style
+        .content3 {
+            @include contentStyle(fixed, 100%, null, 99999);
+            left: 100%;
+
+            &.active {
+                left: 0;
+            }
+
+            .top-area  {
+                @include basicsWrap(flex, 100%, 8%, null, null);
+                align-items: center;
+                
+                h2 {
+                    @include textWrap(1.1em, bold, null, null);
+                    margin-left: 20px;
+                }
+            }
+            
+            .credit-rating {
+                @include opacity_transition_transform(0, .4s, null);
+                height: 80%;
+                opacity: 0;
+                overflow: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                &.show {
+                    opacity: 1;
+                }
+
+                .gauge-wrap {
+                    @include basicsWrap(block, null, 140px, null, null);
+                    overflow: hidden;
+
+                    .gauge {
+                        @include basicsWrap(null, 47.573%, 145%, null, 0 auto);
+                        @include border_or_background(null, 50%, linear-gradient( to right, #888788, #d82121 ), null, null);
+                        position: relative;
+                        transition: .4s ease;
+
+                        &::after {
+                            content: "";
+                            @include basicsWrap(block, 90%, 190px, null, null);
+                            @include position(absolute, 9px, null, null, 9px, null);
+                            @include border_or_background(null, 50%, #fff, null, null);
+                        }
+
+                        .gauge-arrow-wrap {
+                            @include basicsWrap(flex, 100px, 100px, null, null);
+                            @include position(absolute, 27%, 22%, null, null, 10);
+                            align-items: center;
+                            transform: rotate(-180deg);
+                            transition: .8s ease;
+
+                            .gauge-arrow {
+                                @include basicsWrap(null, 25px, 25px, 9px 10px, 0 auto);
+                                @include border_or_background(null, 50%, #736b6b, null, null);
+
+                                span {
+                                    @include basicsWrap(block, 80px, 8px, null, null);
+                                    @include border_or_background(null, 10px 10px 10px 10px, #00182d, null, null);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .rating-number {
+                    @include basicsWrap(flex, null, null, 0 0 15px 0, 15px 0 0 0);
+                    @include textWrap(1.6em, bold, null, null);
+                    justify-content: center;
+
+                    p {
+                        margin-right: 5px;
+                    }
+                }
+
+                .rating-list {
+                    margin-top: 20px;
+
+                    ul {
+                        li {
+                            @include basicsWrap(null, 100%, null, 0 20px, null);
+
+                            > span {
+                                @include basicsWrap(flex, null, 60px, 0 20px, null);
+                                align-items: center;
+                                font-size: 1.05em;
+                                border-bottom: 1px solid #ccc;
+
+                                .item-val {
+                                    margin-left: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .credit-information-list {
+                    margin-top: 50px;
+
+                    ul {
+                        li {
+                            @include basicsWrap(null, null, null, 0 20px, 15px 0 0 0);
+
+                            span {
+                                @include flex(null, center, null);
+                                @include textWrap(1em, bold, #000, null);
+                                @include border_or_background(null, 5px, #f4f4f4, null, null);
+                                padding: 20px;
+
+                                button {
+                                    @include basicsWrap(null, null, null, 5px 10px, 0 0 0 auto);
+                                    background: blue;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+              
+            }
+
+        }
+
+    }
+
+    // Footer CONTENT Tab Menu Btn Wrap - Footer Page 탭메뉴 Style
+    .footer {
+        @include position(fixed, 100%, 0, 0, 0, 99999);
+        transition: all .3s ease;
+
+        &.active {
+            z-index: 0;
+        }
+
+        .footerWrap {
+            @include position(absolute, null, null, 0px, null, 9999);
+            @include basicsWrap(null, 100%, 56px, null, null);
+            background: #f2f2f2;
+            transition: bottom .2s ease;
+
+            .btn_menu {
+
+                @include basicsWrap(block, 30px, 20px, null, null);
+                @include textWrap(1em, null, #fff, null);
+                @include position(absolute, -23px, null, null, null, null);
+
+                &.open {
+                    @include position(absolute, -28px, 45%, null, null, null);
+                    display: block;
+                    color: #fff;
+                    animation:ani .5s infinite alternate;  
+
+                    &:after {
+                        content: '';
+                        @include basicsWrap(block, 100%, 100%, null, null);
+                        @include border_or_background(null, null, url(/resource/img/button/footer-btn.png) no-repeat, 30px, null);
+                        font-size: 0.7em;
+                        position: relative;
+                        transform: rotate(90deg);
+                    }
+
+                    &.show {
+                        &:after {
+                            content: 'CLOSE';
+                            transform: rotate(0);
+                            background: none;
+                        }
+
+                        animation:none;
+                    }
+
+                    @keyframes ani{
+                        0%{transform:translate(0,-5px);}
+                        100%{transform:translate(0,3px);}
+                    }  
+                }
+               
+
+            }
+
+            ul {
+                @include flex(center, center, null);
+                @include basicsWrap(null, 100%, 100%, null, null);
+
+                li {
+                    @include flex(center, center, null);
+                    flex: auto;
+                    height: 100%;
+
+                    .remittance-btn,
+                    .home-btn,
+                    .creditRating-btn {
+                        @include basicsWrap(null, 26px, 26px, null, null);
+                        position: relative;
+                        text-indent: -99999px;
+                    }
+
+                    @mixin btnBackground($imgName) {
+                        background:url("/resource/img/icon/"+ $imgName+"") no-repeat center center;
+                        background-size: 100% 100%;
+                    }
+
+                    .remittance-btn {
+                        @include btnBackground('calculator.png');
+                    }
+                    .home-btn {
+                        @include btnBackground('home.png');
+
+                        &.ani-2 {
+                            animation: animation_big_or_Small 800ms linear;
+                        }
+                    }
+                    .creditRating-btn {
+                        @include btnBackground('bell.png');
+
+                        &.ani-3 {
+                            animation: animation_shake_bell 800ms linear;
+                        }
+                    }
+                    
+            
+                }
+            }
+
+        }
+
+        &.off {
+            .footerWrap {
+                bottom: -60px;
+            }
+        }
+        &.show {
+            top: 0;
+            background-color: rgba( 0, 0, 0, 0.8 );
+
+            .footerWrap {
+                bottom: 0;
+            }
+        }
+    }
+}
+

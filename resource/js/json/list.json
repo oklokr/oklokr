@@ -1,0 +1,250 @@
+{ 
+    "list_array1": [
+        { 
+            "sequence":"1",
+            "url":"/resource/img/goods/1th-1.jpg",
+            "percent":"20",
+            "discountVal":"356,400",
+            "costPrice":"최대할인가336,400원",
+            "productTitle":"[남여공용] KAME MANNEN 가메만넨 명품 안경테 52M C1"
+        },
+        { 
+            "sequence":"2",
+            "url":"/resource/img/goods/1th-2.jpg",
+            "percent":"40",
+            "discountVal":"179,400",
+            "costPrice":"299,000원",
+            "productTitle":"가버  31.350 여성 펌프스 2컬러"
+        },
+        { 
+            "sequence":"3",
+            "url":"/resource/img/goods/1th-3.jpg",
+            "percent":"63",
+            "discountVal":"139,000",
+            "costPrice":"137,000원",
+            "productTitle":"가이거 남성용 문페이즈 멀티펑션 메탈시계(가죽밴드세트) 블랙 GE68022RGB"
+        },
+        { 
+            "sequence":"4",
+            "url":"/resource/img/goods/1th-4.jpg",
+            "percent":"77",
+            "discountVal":"67,000",
+            "costPrice":"66,000원",
+            "productTitle":"카라 러플 소매롤업 포인트벨트 자켓 BYJAH41210"
+        },
+        { 
+            "sequence":"5",
+            "url":"/resource/img/goods/1th-5.jpg",
+            "percent":"75",
+            "discountVal":"49,000",
+            "costPrice":"48,000원",
+            "productTitle":"나우 NAU 남성 소자자켓 1NUJKS7011 BK"
+        },
+        { 
+            "sequence":"6",
+            "url":"/resource/img/goods/1th-6.jpg",
+            "percent":"64",
+            "discountVal":"233,900",
+            "costPrice":"650,000원",
+            "productTitle":"[닥스신사] 체크 싱글자켓 DMJA8B001G2 / DMJA8B001"
+        },
+        { 
+            "sequence":"7",
+            "url":"/resource/img/goods/1th-7.jpg",
+            "percent":"70",
+            "discountVal":"247,500",
+            "costPrice":"825,000원",
+            "productTitle":"[덱케] 베이스라지 메콩 QDQ3ABVB07"
+        },
+        { 
+            "sequence":"8",
+            "url":"/resource/img/goods/1th-8.jpg",
+            "percent":"50",
+            "discountVal":"29,000",
+            "costPrice":"58,000원",
+            "productTitle":"라운드넥에. 롱. 티셔츠 MM05TS110"
+        },
+        { 
+            "sequence":"9",
+            "url":"/resource/img/goods/1th-9.jpg",
+            "percent":"50",
+            "discountVal":"23,000",
+            "costPrice":"품절임박",
+            "productTitle":"그린잎롱티타늄침귀걸이(AEK920790GF)"
+        },
+        { 
+            "sequence":"10",
+            "url":"/resource/img/goods/1th-10.jpg",
+            "percent":"30",
+            "discountVal":"40,600",
+            "costPrice":"58,000원",
+            "productTitle":"다비도프 쿨 워터 맨 오드뚜왈렛 (EDT) 40ml"
+        }
+    ],
+
+    "list_array2": [
+        { 
+            "sequence":"1",
+            "url":"/resource/img/goods/2th-1.jpg",
+            "percent":"55",
+            "discountVal":"11,700",
+            "costPrice":"26,000원",
+            "productTitle":"라로쉐 리요네 와인고블렛 컬러1P(그레이 631710/퍼플 631761)"
+        },
+        { 
+            "sequence":"2",
+            "url":"/resource/img/goods/2th-2.jpg",
+            "percent":"26",
+            "discountVal":"316,730",
+            "costPrice":"428,000원",
+            "productTitle":"라마트리 뱀가죽 스마트 갤럭시S 폰지갑 민트 LSNN-Z06MT"
+        },
+        { 
+            "sequence":"3",
+            "url":"/resource/img/goods/2th-3.jpg",
+            "percent":"20",
+            "discountVal":"159,200",
+            "costPrice":"199,000원",
+            "productTitle":"(라빠레뜨) 깐느로제 미니 화이트 사첼백 BA0S-H0590-06"
+        },
+        { 
+            "sequence":"4",
+            "url":"/resource/img/goods/2th-4.jpg",
+            "percent":"50",
+            "discountVal":"287,000",
+            "costPrice":"574,000원",
+            "productTitle":"라스 라르센 남성용 메탈 시계 씨 네비게이터 134SCSB"
+        },
+        { 
+            "sequence":"5",
+            "url":"/resource/img/goods/2th-5.jpg",
+            "percent":"80",
+            "discountVal":"39,800",
+            "costPrice":"199,000원",
+            "productTitle":"CC콜렉트 리본 블라우스 C182MSC042"
+        },
+        { 
+            "sequence":"6",
+            "url":"/resource/img/goods/2th-6.jpg",
+            "percent":"80",
+            "discountVal":"39,800",
+            "costPrice":"199,000원",
+            "productTitle":"CC콜렉트 리본 블라우스 C182MSC042"
+        },
+        { 
+            "sequence":"7",
+            "url":"/resource/img/goods/2th-7.jpg",
+            "percent":"80",
+            "discountVal":"39,800",
+            "costPrice":"199,000원",
+            "productTitle":"마노 루즈핏 양털 보아털 후리스 후드 티셔츠 (MN)19W053AA"
+        },
+        { 
+            "sequence":"8",
+            "url":"/resource/img/goods/2th-8.jpg",
+            "percent":"31",
+            "discountVal":"69,000",
+            "costPrice":"100,000원",
+            "productTitle":"[마르셀로불론] 스타터 볼캡 CMLB008E190171091088"
+        },
+        { 
+            "sequence":"9",
+            "url":"/resource/img/goods/2th-9.jpg",
+            "percent":"11",
+            "discountVal":"190,000",
+            "costPrice":"215,000원",
+            "productTitle":"마르셀로불론 화이트 프린트 반팔 티셔츠 CMAA018E19001001 0188"
+        },
+        { 
+            "sequence":"10",
+            "url":"/resource/img/goods/2th-10.jpg",
+            "percent":"30",
+            "discountVal":"321,300",
+            "costPrice":"450,000원",
+            "productTitle":"바버 X 엔지니어드 가먼츠 UNLINED GRAHAM 자켓 MCA0596"
+        }
+    ],
+
+    "list_array3": [
+        { 
+            "sequence":"1",
+            "url":"/resource/img/goods/3th-1.jpg",
+            "percent":"35",
+            "discountVal":"1,979,000",
+            "costPrice":"2,100,000원",
+            "productTitle":"SACAI 사카이 레오파드 인조 퍼 재킷 19 04546 651"
+        },
+        { 
+            "sequence":"2",
+            "url":"/resource/img/goods/3th-2.jpg",
+            "percent":"10",
+            "discountVal":"269,100",
+            "costPrice":"299,000원",
+            "productTitle":"AMI 20SS 아미 하트 로고 후드티 (블랙) P20HJ008 730 001 BLACK"
+        },
+        { 
+            "sequence":"3",
+            "url":"/resource/img/goods/3th-3.jpg",
+            "percent":"30",
+            "discountVal":"77,000",
+            "costPrice":"110,000원",
+            "productTitle":"베르사체 바니타스 오 드 퍼퓸50ml"
+        },
+        { 
+            "sequence":"4",
+            "url":"/resource/img/goods/3th-4.jpg",
+            "percent":"61",
+            "discountVal":"15,000",
+            "costPrice":"39,000원",
+            "productTitle":"가파치 여성 모 장갑 (GPC-0125)"
+        },
+        { 
+            "sequence":"5",
+            "url":"/resource/img/goods/3th-5.jpg",
+            "percent":"92",
+            "discountVal":"20,000",
+            "costPrice":"279,000원",
+            "productTitle":"타운젠트 / 그레이 면혼방 패딩캐주얼자켓 / BNJ06A102GE"
+        },
+        { 
+            "sequence":"6",
+            "url":"/resource/img/goods/3th-6.jpg",
+            "percent":"10",
+            "discountVal":"1,197,000",
+            "costPrice":"1,330,000원",
+            "productTitle":"갤러리어클락FERRAGAMO 1898 NO. SFH6004-18"
+        },
+        { 
+            "sequence":"7",
+            "url":"/resource/img/goods/3th-7.jpg",
+            "percent":"41",
+            "discountVal":"289,000",
+            "costPrice":"490,000원",
+            "productTitle":"[FERRAGAMO]페라가모 더블 간치니 남성 반지갑 66A064 685972"
+        },
+        { 
+            "sequence":"8",
+            "url":"/resource/img/goods/3th-8.jpg",
+            "percent":"60",
+            "discountVal":"63,200",
+            "costPrice":"158,000원",
+            "productTitle":"여성 배색 포인트 집업 카라티셔츠 GJMLTS69"
+        },
+        { 
+            "sequence":"9",
+            "url":"/resource/img/goods/3th-9.jpg",
+            "percent":"40",
+            "discountVal":"101,000",
+            "costPrice":"169,000원",
+            "productTitle":"바람막이 FLY MOTION FREE 방풍자켓 KMM19163"
+        },
+        { 
+            "sequence":"10",
+            "url":"/resource/img/goods/3th-10.jpg",
+            "percent":"52",
+            "discountVal":"55,000",
+            "costPrice":"115,000원",
+            "productTitle":"[K2] BOOST:여름 배색형 팬츠 (KMM19393/Z1)"
+        }
+    ]
+}
